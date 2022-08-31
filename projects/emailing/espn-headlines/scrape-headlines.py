@@ -1,6 +1,5 @@
-from bs4 import BeautifulSoup, SoupStrainer
+from bs4 import BeautifulSoup
 import requests
-import json
 
 def check_headlines(sport="nba",keys=["boston","celtic"]):
     base_url = f'https://www.espn.com/{sport}/'
