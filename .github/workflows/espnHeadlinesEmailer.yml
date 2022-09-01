@@ -22,7 +22,7 @@ jobs:
           python -m pip install os
           python -m pip install smtplib
           python -m pip install email
-      - name: execute py script
+      - name: execute python script
         env: 
           EMAIL_USERNAME: ${{ secrets.ESPN_EMAILER_USER }}
           EMAIL_PASSCODE: ${{ secrets.ESPN_EMAILER_PASS }}
