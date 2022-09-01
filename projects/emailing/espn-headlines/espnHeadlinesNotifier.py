@@ -6,4 +6,4 @@ from emailSender import send_email
 try:
   send_email(check_headlines("nfl",["phi"]))
 except:
-  return "Issue encountered... could not execute"
+  print("Issue encountered... could not execute")
