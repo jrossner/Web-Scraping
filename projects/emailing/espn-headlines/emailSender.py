@@ -1,22 +1,16 @@
 import os
 import smtplib
+from email.message import EmailMessage
 
 def send_email(headlineBody):
   username = os.environ.get('ESPN_EMAILER_USER')
   passcode = os.environ.get('ESPN_EMAILER_PASS')
-  sent_from = username
-  to = 'rosj016@gmail.com'
-  subject = 'ESPN Headlines For You'
-  body = f'testing...: {headlineBody}'
-
-  email_text = """\
-  From: %s
-  To: %s
-  Subject: %s
-
-
-  %s
-  """ % (sentFrom, ", ".join(to), subject, body)
+  message = EmailMessage()
+  
+  message['To'] = 'rosj016@gmail.com'
+  message['Subject'] = 'ESPN Headlines For You'
+  message['From'] = username
+  message.set_content(f'testing...: {headlineBody}')
 
   try:
       smtp_server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
