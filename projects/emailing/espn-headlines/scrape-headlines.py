@@ -42,4 +42,4 @@ def check_headlines(sport="nba",keys=["boston","celtic"]):
     return hl
 
 # call function
-check_headlines()
+# check_headlines()
