@@ -1,0 +1,23 @@
+name: email-relevant-espn-headlines
+
+on:
+  schedule: 
+    - cron:'*/60 * * * *'
+    
+jobs:
+  build:
+    runs-on: ubuntu-lates
+    steps:
+      - name: checkout repo content
+        uses: actions/checkout@v2
+        
+      - name: setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+          
+      - name: execute py script
+        env: 
+          EMAIL_USERNAME: ${{ secrets.ESPN_EMAILER_USER }}
+          EMAIL_PASSCODE: ${{ secrets.ESPN_EMAILER_PASS }}
+        run: python espn-headlines-notifier.py
