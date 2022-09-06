@@ -38,7 +38,7 @@ def check_headlines(sport="nba",keys=["boston","celtic"]):
         if present == True:
             hl[title] = {"link": link, "title": title,"sport": sport}
             # print(f'Checkout this article: {link}')
-            
+    print(f'HL: {hl}')
     return hl
 
 # call function
