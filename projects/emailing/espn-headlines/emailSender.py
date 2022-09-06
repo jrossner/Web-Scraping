@@ -20,4 +20,4 @@ def send_email(headlineBody):
       smtp_server.close()
       print("email sent!")
   except Exception as ex:
-      return f'Error: {ex}'
+      print(f'Error: {ex}')
