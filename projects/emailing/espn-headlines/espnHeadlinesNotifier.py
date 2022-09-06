@@ -7,13 +7,6 @@ username = os.environ.get('ESPN_EMAILER_USER')
 passcode = os.environ.get('ESPN_EMAILER_PASS')
   
 try:
-  hl = check_headlines("nfl",["buffalo","bill"])
-  print(f'in eHN: {hl}')
+  send_email(check_headlines("nfl",["buffalo","bill"]),username,passcode)
 except Exception as ex:
-  print(f'Issue encountered in check_headlines... could not execute due to: {ex}')
-
-try:
-  send_email(hl,username,passcode)
-  print("Process executed.")
-except Exception as ex:
-  print(f'Issue encountered in send_email... could not execute due to: {ex}')
+  print(f'Could not execute due to: {ex}')
