@@ -3,10 +3,12 @@ import smtplib
 from email.message import EmailMessage
 
 def send_email(headlineBody,username,passcode):
+  send_to = ['rosj016@gmail.com']
+  sent_from = username
   message = EmailMessage()
-  message['To'] = 'rosj016@gmail.com'
+  message['To'] = send_to
   message['Subject'] = 'ESPN Headlines For You'
-  message['From'] = username
+  message['From'] = sent_from
   message.set_content(f'testing...: {headlineBody}')
 
   try:
@@ -25,7 +27,7 @@ def send_email(headlineBody,username,passcode):
     print(f'Error 3: {ex}')
     
   try:
-    smtp_server.sendmail(sent_from, to, email_text)
+    smtp_server.sendmail(sent_from, send_to[0], message)
   except Exception as ex:
     print(f'Error 4: {ex}')
  
