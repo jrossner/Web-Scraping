@@ -24,7 +24,6 @@ def send_email(headlineBody,username,passcode):
   try:
     smtp_server.login(username,passcode)
   except Exception as ex:
-    print(f'{type(username)},{type(passcode)}')
     print(f'Error 3: {ex}')
     
   try:
