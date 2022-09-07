@@ -3,6 +3,7 @@ import smtplib
 from email.message import EmailMessage
 
 def send_email(headlineBody,username,passcode):
+  print(f'user: {username}, {str(username)}, pass: {passcode}, {str(passcode)}')
   send_to = ['rosj016@gmail.com']
   sent_from = username
   message = EmailMessage()
