@@ -29,4 +29,4 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.APPLEREITNEWS_ACCESS_TOKEN }}
           ACCESS_TOKEN_SECRET: ${{ secrets.APPLEREITNEWS_ACCESS_TOKEN_SECRET }}
           
-        run: python projects/tweeting/applereitnews/sendClosingPriceTweet.py
+        run: python projects/tweeting/applereitnews/closing-price/sendClosingPriceTweet.py
