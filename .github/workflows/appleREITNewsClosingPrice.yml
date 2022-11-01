@@ -2,7 +2,7 @@ name: tweet-apple-reit-closing-price
 
 on:
   schedule: 
-    - cron: '15 20 * * 1-5'
+    - cron: '59 23 * * 1-5'
 
 jobs:
   build:
