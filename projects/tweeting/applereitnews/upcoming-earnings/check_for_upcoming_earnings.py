@@ -19,7 +19,7 @@ def checklUpcomingEarnings():
       table = str(page.find_all("tbody")[1])
       consensusEst = table.split('</td><td>')[2])
     
-      text += f'\nThe Consensus Earnings Estimate for this quarter is {consensusEst}'
+      text += f'\n\nThe Consensus Earnings Estimate for this quarter is {consensusEst}'
     except:
       print("Could not scrape consensus estimates")
   else:
