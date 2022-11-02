@@ -1,5 +1,4 @@
 import os
-import smtplib
 import tweepy
 from get_closing_price import getClosingPrice
 
