@@ -14,11 +14,14 @@ def checklUpcomingEarnings():
     # earnings date is 1 week from today
     text = f'Apple REIT announces earnings 1 week from today ({earningsDate}).'
     
-    page = soup.find("div", {"id": "cphPrimaryContent_pnlCompany"})
-    table = str(page.find_all("tbody")[1])
-    consensusEst = table.split('</td><td>')[2])
+    try:
+      page = soup.find("div", {"id": "cphPrimaryContent_pnlCompany"})
+      table = str(page.find_all("tbody")[1])
+      consensusEst = table.split('</td><td>')[2])
     
-    text += f'\nThe Consensus Earnings Estimate for this quarter is {consensusEst}'
+      text += f'\nThe Consensus Earnings Estimate for this quarter is {consensusEst}'
+    except:
+      print("Could not scrape consensus estimates")
   else:
     text = False
 
