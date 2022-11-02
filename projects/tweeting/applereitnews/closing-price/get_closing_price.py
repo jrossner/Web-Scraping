@@ -9,7 +9,8 @@ def getClosingPrice():
   
   if (today == last):
       closing = info["Close"][-1]
-      changePerc = 100 * ((info["Close"][-1] - info["Close"][-2]) / info["Close"][-2])
+      change = (info["Close"][-1] - info["Close"][-2])
+      changePerc = 100 * (change / info["Close"][-2])
       if changePerc < 0:
           opp = ''
       else:
