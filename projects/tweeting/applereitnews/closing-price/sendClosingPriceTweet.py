@@ -9,11 +9,6 @@ API_SECRET = f"{os.environ.get('API_SECRET')}"
 ACCESS_TOKEN = f"{os.environ.get('ACCESS_TOKEN')}"
 ACCESS_TOKEN_SECRET = f"{os.environ.get('ACCESS_TOKEN_SECRET')}"
 
-print(str(API_KEY))
-print(str(API_SECRET))
-print(str(ACCESS_TOKEN))
-print(str(ACCESS_TOKEN_SECRET))
-
 # AUTHORIZATION
 auth = tweepy.OAuthHandler(API_KEY,API_SECRET)
 auth.set_access_token(ACCESS_TOKEN,ACCESS_TOKEN_SECRET)
