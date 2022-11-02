@@ -4,10 +4,10 @@ import tweepy
 from get_closing_price import getClosingPrice
 
 # SECRETS
-API_KEY = os.environ.get('API_KEY')
-API_SECRET = os.environ.get('API_SECRET')
-ACCESS_TOKEN = os.environ.get('ACCESS_TOKEN')
-ACCESS_TOKEN_SECRET = os.environ.get('ACCESS_TOKEN_SECRET')
+API_KEY = f"{os.environ.get('API_KEY')}"
+API_SECRET = f"{os.environ.get('API_SECRET')"
+ACCESS_TOKEN = f"{os.environ.get('ACCESS_TOKEN')"
+ACCESS_TOKEN_SECRET = f"{os.environ.get('ACCESS_TOKEN_SECRET')"
 
 print(str(API_KEY))
 print(str(API_SECRET))
