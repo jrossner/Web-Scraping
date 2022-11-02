@@ -4,15 +4,15 @@ import tweepy
 from get_closing_price import getClosingPrice
 
 # SECRETS
-API_KEY = str(os.environ.get('APPLEREITNEWS_API_KEY'))
-API_SECRET = str(os.environ.get('APPLEREITNEWS_API_SECRET'))
-ACCESS_TOKEN = str(os.environ.get('APPLEREITNEWS_ACCESS_TOKEN'))
-ACCESS_TOKEN_SECRET = str(os.environ.get('APPLEREITNEWS_ACCESS_TOKEN_SECRET'))
+API_KEY = os.environ.get('APPLEREITNEWS_API_KEY')
+API_SECRET = os.environ.get('APPLEREITNEWS_API_SECRET')
+ACCESS_TOKEN = os.environ.get('APPLEREITNEWS_ACCESS_TOKEN')
+ACCESS_TOKEN_SECRET = os.environ.get('APPLEREITNEWS_ACCESS_TOKEN_SECRET')
 
-print(API_KEY)
-print(API_SECRET)
-print(ACCESS_TOKEN)
-print(ACCESS_TOKEN_SECRET)
+print(str(API_KEY))
+print(str(API_SECRET))
+print(str(ACCESS_TOKEN))
+print(str(ACCESS_TOKEN_SECRET))
 
 # AUTHORIZATION
 auth = tweepy.OAuthHandler(API_KEY,API_SECRET)
