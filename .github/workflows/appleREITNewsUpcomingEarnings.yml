@@ -2,7 +2,7 @@ name: tweet-apple-reit-upcoming-earnings
 
 on:
   schedule: 
-    - cron: '15 20 * * 1-5'
+    - cron: '00 16 * * *'
   workflow_dispatch:
 
 jobs:
