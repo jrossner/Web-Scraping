@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 from datetime import datetime, timedelta
 
-def checklUpcomingEarnings():
+def checkUpcomingEarnings():
   link = "https://www.marketbeat.com/stocks/NYSE/APLE/earnings/"
   page_request = requests.get(link)
   soup = BeautifulSoup(page_request.text,"lxml")
