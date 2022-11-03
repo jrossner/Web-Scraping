@@ -1,0 +1,33 @@
+name: tweet-apple-reit-actual-earnings
+
+on:
+  schedule: 
+    - cron: '00 21 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo content
+        uses: actions/checkout@v2
+      - name: setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      - name: install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install bs4
+          python -m pip install requests
+          python -m pip install lxml
+          python -m pip install tweepy
+          python -m pip install yfinance
+      - name: execute python script
+        env:
+          API_KEY: ${{ secrets.APPLEREITNEWS_API_KEY }}
+          API_SECRET: ${{ secrets.APPLEREITNEWS_API_SECRET }}
+          ACCESS_TOKEN: ${{ secrets.APPLEREITNEWS_ACCESS_TOKEN }}
+          ACCESS_TOKEN_SECRET: ${{ secrets.APPLEREITNEWS_ACCESS_TOKEN_SECRET }}
+          
+        run: python projects/tweeting/applereitnews/announced-earnings/sendActualEarningsTweet.py
