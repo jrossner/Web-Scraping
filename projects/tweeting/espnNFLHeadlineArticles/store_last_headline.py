@@ -1,7 +1,7 @@
 import json
 
 def storeLastHeadline(newHeadlines):
-  last_headline = {newHeadlines[newHeadlines.keys()[0]]}
+  last_headline = {newHeadlines[list(newHeadlines.keys())[0]]}
   
   object = json.dumps(last_headline)
   
