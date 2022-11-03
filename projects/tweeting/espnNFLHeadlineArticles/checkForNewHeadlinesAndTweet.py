@@ -1,5 +1,6 @@
 from get_espn_nfl_headlines import getEspnNFLHeadlines
 from check_for_new_headlines import checkIfNewHeadlines
+from store_last_headline import storeLastHeadline
 from send_new_headline_tweets import sendNewHeadlineTweets
 
 # SECRETS
@@ -16,6 +17,7 @@ except:
 try:
   current_headlines = getEspnNFLHeadlines()
   new_headlines = checkIfNewHeadlines(current_headlines,last_headline)
+  storeLastHeadline(new_headlines)
   sendNewHeadlineTweets(new_headlines,API_KEY,API_SECRET,ACCESS_TOKEN,ACCESS_TOKEN_SECRET)
   print("Script completed")
 except Exception as ex:
