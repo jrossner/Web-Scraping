@@ -12,7 +12,8 @@ ACCESS_TOKEN_SECRET = f"{os.environ.get('ACCESS_TOKEN_SECRET')}"
 
 try:
   last_headline = json.load(open('last_headline.json'))
-except:
+except Exception as ex:
+  print("Could not load last_headline.json")
   last_headline = {}
   
 try:
