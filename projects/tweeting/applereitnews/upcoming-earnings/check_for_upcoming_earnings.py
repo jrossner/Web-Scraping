@@ -17,7 +17,7 @@ def checkUpcomingEarnings():
     try:
       page = soup.find("div", {"id": "cphPrimaryContent_pnlCompany"})
       table = str(page.find_all("tbody")[1])
-      consensusEst = table.split('</td><td>')[2])
+      consensusEst = table.split('</td><td>')[2]
     
       text += f'\n\nThe Consensus Earnings Estimate for this quarter is {consensusEst}'
     except:
