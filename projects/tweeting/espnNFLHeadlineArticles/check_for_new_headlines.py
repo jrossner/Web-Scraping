@@ -1,7 +1,7 @@
 import json
 
 def checkIfNewHeadlines(articles,lastHeadline):
-    newHeadlines = []
+    newHeadlines = {}
     for key in articles.keys():
         if lastHeadline != {}:
             try:
@@ -10,6 +10,6 @@ def checkIfNewHeadlines(articles,lastHeadline):
             except:
                 print("Problem in check_for_new_headlines")
                 
-        newHeadlines.append(articles[key])
+        newHeadlines[key] = articles[key]
             
     return newHeadlines
