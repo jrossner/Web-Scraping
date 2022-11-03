@@ -5,7 +5,7 @@ def storeLastHeadline(newHeadlines):
   object = json.dumps(last_headline)
   
   try:
-    with open('last_headline.json', 'w') as outfile:
+    with open('./last_headline.json', 'w') as outfile:
       outfile.write(object)
     print('json file written successfully')
   except Exception as ex:
