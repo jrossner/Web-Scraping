@@ -17,9 +17,7 @@ except:
   
 try:
   current_headlines = getEspnNFLHeadlines()
-  print(f'Current: {current_headlines}')
   new_headlines = checkIfNewHeadlines(current_headlines,last_headline)
-  print(f'New: {new_headlines}')
   storeLastHeadline(new_headlines)
   sendNewHeadlineTweets(new_headlines,API_KEY,API_SECRET,ACCESS_TOKEN,ACCESS_TOKEN_SECRET)
   print("Script completed")
