@@ -7,7 +7,7 @@ def storeLastHeadline(newHeadlines):
   try:
     with open('last_headline.json', 'w') as outfile:
       outfile.write(object)
-      print('json file written successfully')
+    print('json file written successfully')
   except Exception as ex:
     print(f'Could not write json file due to: {ex}')
     
