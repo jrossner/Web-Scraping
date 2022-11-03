@@ -21,5 +21,6 @@ try:
       print("Ex-Dividend is not upcoming")
     else:
       api.update_status(tweet_text)
+      print("Tweet sent")
 except Exception as ex:
     print(f'Could not execute due to: {ex}')
