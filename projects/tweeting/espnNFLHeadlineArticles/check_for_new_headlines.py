@@ -3,9 +3,10 @@ import json
 def checkIfNewHeadlines(articles,lastHeadline):
     newHeadlines = []
     for key in articles.keys():
-        if key == list(lastHeadline.keys())[0]:
-            break
-        else:
-            newHeadlines.append(articles[key])
+        if lastHeadline != {}:
+            if key == list(lastHeadline.keys())[0]:
+                break
+                
+        newHeadlines.append(articles[key])
             
     return newHeadlines
