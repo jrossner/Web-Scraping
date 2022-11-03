@@ -22,7 +22,8 @@ def checkUpcomingEarnings():
       text += f'\n\nThe Consensus Earnings Estimate for this quarter is {consensusEst}'
     except:
       print("Could not scrape consensus estimates")
-  elif:
+      
+  elif datetime.today().strftime('%b. %-d') == earningsDate:
     text = f'Apple REIT announces earnings today ({earningsDate}).'
     
     try:
@@ -33,6 +34,7 @@ def checkUpcomingEarnings():
       text += f'\n\nThe Consensus Earnings Estimate for this quarter is {consensusEst}'
     except:
       print("Could not scrape consensus estimates")
+      
   else:
     text = False
 
