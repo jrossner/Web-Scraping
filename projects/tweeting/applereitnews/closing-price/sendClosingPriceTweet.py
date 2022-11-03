@@ -15,7 +15,11 @@ api = tweepy.API(auth)
 
 try:
     tweet_text = getClosingPrice()
-    # MAKE TWEET
-    api.update_status(tweet_text)
+    if tweet_text == False:
+        print("Could not get Closing Price")
+    else:
+        # MAKE TWEET
+        api.update_status(tweet_text)
+        print("Tweet sent")
 except Exception as ex:
     print(f'Could not execute due to: {ex}')
