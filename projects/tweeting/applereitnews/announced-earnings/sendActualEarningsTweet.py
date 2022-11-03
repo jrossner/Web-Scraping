@@ -16,7 +16,7 @@ api = tweepy.API(auth)
 try:
     tweet_text = checkEarningsFigures()
     if tweet_text == False:
-      print("Actual Earnings not posted yet")
+      print("Actual Earnings not posted yet or not Earnings Date")
     else:
       # MAKE TWEET
       api.update_status(tweet_text)
