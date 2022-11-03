@@ -8,7 +8,6 @@ def sendNewHeadlineTweets(newHeadlines,api_key,api_secret,access_token,access_to
     api = tweepy.API(auth)
 
     try:
-        print(f'HERE: {newHeadlines}')
         for title in newHeadlines.keys():
             tweet_text = f'NEW NFL ARTICLE ON ESPN:\n{newHeadlines[title]["title"]}\n{newHeadlines[title]["link"]}'
             api.update_status(tweet_text)
