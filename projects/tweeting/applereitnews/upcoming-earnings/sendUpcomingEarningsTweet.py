@@ -15,8 +15,11 @@ api = tweepy.API(auth)
 
 try:
     tweet_text = checkUpcomingEarnings()
-    # MAKE TWEET
-    api.update_status(tweet_text)
-    print("Tweet sent")
+    if tweet_text == False:
+        print("No upcoming Earnings")
+    else:
+        # MAKE TWEET
+        api.update_status(tweet_text)
+        print("Tweet sent")
 except Exception as ex:
     print(f'Could not execute due to: {ex}')
