@@ -19,4 +19,4 @@ try:
   sendNewHeadlineTweets(new_headlines,API_KEY,API_SECRET,ACCESS_TOKEN,ACCESS_TOKEN_SECRET)
   print("Script completed")
 except Exception as ex:
-  print(f'Could not complete script due to: {ex}'
+  print(f'Could not complete script due to: {ex}')
