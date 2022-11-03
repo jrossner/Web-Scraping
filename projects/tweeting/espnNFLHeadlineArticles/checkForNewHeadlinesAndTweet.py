@@ -1,3 +1,4 @@
+import os
 from get_espn_nfl_headlines import getEspnNFLHeadlines
 from check_for_new_headlines import checkIfNewHeadlines
 from store_last_headline import storeLastHeadline
