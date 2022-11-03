@@ -17,5 +17,6 @@ try:
     tweet_text = checkUpcomingEarnings()
     # MAKE TWEET
     api.update_status(tweet_text)
+    print("Tweet sent")
 except Exception as ex:
     print(f'Could not execute due to: {ex}')
