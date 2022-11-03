@@ -1,5 +1,3 @@
-import json
-
 def checkIfNewHeadlines(articles,lastHeadline):
     newHeadlines = {}
     for key in articles.keys():
