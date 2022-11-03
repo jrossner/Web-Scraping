@@ -9,7 +9,10 @@ def checkIfNewHeadlines(articles,lastHeadline):
                     break
             except:
                 print("Problem in check_for_new_headlines")
-                
-        newHeadlines[key] = articles[key]
+        
+        try:
+            newHeadlines[key] = articles[key]
+        except:
+            print("issue in checkIfNewHeadlines")
             
     return newHeadlines
