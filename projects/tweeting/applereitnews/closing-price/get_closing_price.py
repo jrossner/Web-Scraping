@@ -15,7 +15,7 @@ def getClosingPrice():
           opp = ''
       else:
           opp = '+'
-      text = f'{readableDate}: Closing Price: ${round(closing,2)} ({opp}{round(changePerc,2)}%)'
+      text = f'{readableDate}:\nClosing Price: ${round(closing,2)} ({opp}{round(changePerc,2)}%)'
 
       monthChangeAmount = info["Close"][-1] - info["Close"][-30]
       monthChangePerc = 100* (monthChangeAmount / info["Close"][-30])
