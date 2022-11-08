@@ -21,7 +21,7 @@ def getClosingPrice():
       monthChangePerc = 100* (monthChangeAmount / info["Close"][-30])
 
       if monthChangeAmount < 0:
-          monthOpp = '-'
+          monthOpp = ''
       else: 
           monthOpp = '+'
 
@@ -31,7 +31,7 @@ def getClosingPrice():
       yearChangePerc = 100 * (yearChangeAmount / info["Close"][-365])
 
       if yearChangeAmount < 0:
-          yearOpp = '-'
+          yearOpp = ''
       else: 
           yearOpp = '+'
 
