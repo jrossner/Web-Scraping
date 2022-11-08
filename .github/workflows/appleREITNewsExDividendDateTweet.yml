@@ -2,7 +2,7 @@ name: tweet-apple-reit-ex-dividend-date
 
 on:
   schedule: 
-    - cron: '30 12 * * *'
+    - cron: '30 13 * * *'
   workflow_dispatch:
   
 jobs:
