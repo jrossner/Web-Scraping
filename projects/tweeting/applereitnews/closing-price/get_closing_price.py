@@ -15,7 +15,8 @@ def getClosingPrice():
           opp = ''
       else:
           opp = '+'
-      text = f'{readableDate}:\nClosing Price: ${round(closing,2)} ({opp}{round(changePerc,2)}%)'
+      text = f'{readableDate}:\nClosing Price: ${round(closing,2)}'
+      text += f'\n1-Day Change: {opp}${round(change,2)} ({opp}{round(changePerc,2)}%)'
 
       monthChangeAmount = info["Close"][-1] - info["Close"][-30]
       monthChangePerc = 100* (monthChangeAmount / info["Close"][-30])
@@ -25,7 +26,7 @@ def getClosingPrice():
       else: 
           monthOpp = '+'
 
-      text += f'\n1 Month Change: {monthOpp}${round(monthChangeAmount,2)} ({monthOpp}{round(monthChangePerc,2)}%)'
+      text += f'\n30-Day Change: {monthOpp}${round(monthChangeAmount,2)} ({monthOpp}{round(monthChangePerc,2)}%)'
 
       yearChangeAmount = info["Close"][-1] - info["Close"][-365]
       yearChangePerc = 100 * (yearChangeAmount / info["Close"][-365])
@@ -35,7 +36,7 @@ def getClosingPrice():
       else: 
           yearOpp = '+'
 
-      text += f'\n1 Year Change: {yearOpp}${round(yearChangeAmount,2)} ({yearOpp}{round(yearChangePerc,2)}%)'
+      text += f'\nYTD Change: {yearOpp}${round(yearChangeAmount,2)} ({yearOpp}{round(yearChangePerc,2)}%)'
 
   else:
       text = f'{readableDate}: Market Was Closed Today'
