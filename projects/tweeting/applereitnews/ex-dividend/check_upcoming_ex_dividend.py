@@ -1,6 +1,6 @@
 import yfinance as yf
 from datetime import datetime, timedelta
-from dateSuffix import getDateSuffix
+from ../dateSuffix import getDateSuffix
 
 def checkForUpcomingExDividend():
   exDividendEpoch = yf.Ticker("APLE").info['exDividendDate']
