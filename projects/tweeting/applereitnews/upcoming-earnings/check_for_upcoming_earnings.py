@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 from datetime import datetime, timedelta
-from dateSuffix import getDateSuffix
+#from ../dateSuffix import getDateSuffix
 
 def checkUpcomingEarnings():
   link = "https://www.marketbeat.com/stocks/NYSE/APLE/earnings/"
@@ -10,11 +10,11 @@ def checkUpcomingEarnings():
   head = str(soup.find("dd", class_ = "stat-summary-heading my-1"))
   
   earningsDate = head.split('my-1">')[1].split('<span')[0]
-  dateSuf = getDateSuffix(earningsDate.strftime('%d'))
+  #dateSuf = getDateSuffix(earningsDate.strftime('%d'))
   
   if (datetime.today()+timedelta(days=7)).strftime('%b. %-d') == earningsDate:
     # earnings date is 1 week from today
-    text = f'Apple REIT announces earnings 1 week from today ({earningsDate}{dateSuf}).'
+    text = f'Apple REIT announces earnings 1 week from today ({earningsDate}).'#{dateSuf}).'
     
     try:
       page = soup.find("div", {"id": "cphPrimaryContent_pnlCompany"})
@@ -26,7 +26,7 @@ def checkUpcomingEarnings():
       print("Could not scrape consensus estimates")
       
   elif datetime.today().strftime('%b. %-d') == earningsDate:
-    text = f'Apple REIT announces earnings today ({earningsDate}{dateSuf}).'
+    text = f'Apple REIT announces earnings today ({earningsDate}).'#{dateSuf}).'
     
     try:
       page = soup.find("div", {"id": "cphPrimaryContent_pnlCompany"})
