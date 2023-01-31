@@ -7,7 +7,7 @@ def getClosingPrice():
   today = datetime.today().strftime('%Y-%m-%d')
   last = info.tail(1).index.item().strftime('%Y-%m-%d')
   readableDate = datetime.today().strftime('%A %B %-d')
-  dateSuffix = getDate(datetime.today().strftime('%m'))
+  dateSuf = getDate(datetime.today().strftime('%m'))
   
   if (today == last):
       closing = info["Close"][-1]
@@ -17,7 +17,7 @@ def getClosingPrice():
           opp = ''
       else:
           opp = '+'
-      text = f'{readableDate}{dateSuffix}:\nClosing Price: ${round(closing,2)}'
+      text = f'{readableDate}{dateSuf}:\nClosing Price: ${round(closing,2)}'
       text += f'\n1-Day Change: {opp}${round(change,2)} ({opp}{round(changePerc,2)}%)'
 
       monthChangeAmount = info["Close"][-1] - info["Close"][-30]
@@ -41,6 +41,6 @@ def getClosingPrice():
       text += f'\nYTD Change: {yearOpp}${round(yearChangeAmount,2)} ({yearOpp}{round(yearChangePerc,2)}%)'
 
   else:
-      text = f'{readableDate}: Market Was Closed Today'
+      text = f'{readableDate}{dateSuf}: Market Was Closed Today'
       
   return text
