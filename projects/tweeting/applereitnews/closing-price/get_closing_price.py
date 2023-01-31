@@ -1,6 +1,6 @@
 import yfinance as yf
 from datetime import datetime
-from ../../applereitnews/dateSuffix import getDateSuffix
+from ..../applereitnews/dateSuffix import getDateSuffix
 
 def getClosingPrice():
   info = yf.Ticker("APLE").history(period="365d")
