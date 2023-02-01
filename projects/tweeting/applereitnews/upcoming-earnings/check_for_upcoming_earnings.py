@@ -3,8 +3,8 @@ import requests
 from datetime import datetime, timedelta
 import os
 try:
-  os.chdir('..')
-  from utility_functions.dateSuffix import getDateSuffix
+  os.chdir('../utility_functions/')
+  from dateSuffix import getDateSuffix
 except Exception as ex:
   print(f'Didnt work: {ex}')
 
