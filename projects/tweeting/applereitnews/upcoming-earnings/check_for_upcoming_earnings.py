@@ -5,8 +5,8 @@ import os
 try:
   os.chdir('..')
   from utility_functions.dateSuffix import getDateSuffix
-except:
-  print("Didnt Work")
+except Exception as ex:
+  print(f'Didnt work: {ex}')
 
 def checkUpcomingEarnings():
   link = "https://www.marketbeat.com/stocks/NYSE/APLE/earnings/"
