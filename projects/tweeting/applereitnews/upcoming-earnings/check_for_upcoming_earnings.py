@@ -1,13 +1,6 @@
 from bs4 import BeautifulSoup
 import requests
 from datetime import datetime, timedelta
-import os
-try:
-  os.chdir('..')
-  os.chdir('utility_functions')
-  from dateSuffix import getDateSuffix
-except Exception as ex:
-  print(f'Didnt work: {ex}')
 
 def checkUpcomingEarnings():
   link = "https://www.marketbeat.com/stocks/NYSE/APLE/earnings/"
