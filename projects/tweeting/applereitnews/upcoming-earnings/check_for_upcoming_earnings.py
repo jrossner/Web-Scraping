@@ -1,7 +1,12 @@
 from bs4 import BeautifulSoup
 import requests
 from datetime import datetime, timedelta
-from faux_folder.utility_functions.dateSuffix import getDateSuffix
+import os
+try: 
+  #from faux_folder.utility_functions.dateSuffix import getDateSuffix
+  print(os.getcwd())
+Except:
+  print("Didnt Work")
 
 def checkUpcomingEarnings():
   link = "https://www.marketbeat.com/stocks/NYSE/APLE/earnings/"
