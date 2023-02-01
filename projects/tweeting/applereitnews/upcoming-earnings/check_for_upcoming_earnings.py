@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 import os
 try:
   os.chdir('..')
-  os.chdir('/utility_functions/')
+  os.chdir('utility_functions')
   from dateSuffix import getDateSuffix
 except Exception as ex:
   print(f'Didnt work: {ex}')
