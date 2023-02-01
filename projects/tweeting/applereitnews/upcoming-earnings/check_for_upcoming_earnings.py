@@ -5,7 +5,7 @@ import os
 try: 
   #from faux_folder.utility_functions.dateSuffix import getDateSuffix
   print(os.getcwd())
-Except:
+except:
   print("Didnt Work")
 
 def checkUpcomingEarnings():
