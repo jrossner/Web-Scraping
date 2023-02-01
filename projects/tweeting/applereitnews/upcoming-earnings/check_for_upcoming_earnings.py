@@ -2,9 +2,9 @@ from bs4 import BeautifulSoup
 import requests
 from datetime import datetime, timedelta
 import os
-try: 
-  #from faux_folder.utility_functions.dateSuffix import getDateSuffix
-  print(os.getcwd())
+try:
+  os.chdir('..')
+  from utility_functions.dateSuffix import getDateSuffix
 except:
   print("Didnt Work")
 
