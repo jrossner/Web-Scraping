@@ -22,7 +22,7 @@ def getClosingPrice():
   today = datetime.today().strftime('%Y-%m-%d')
   last = info.tail(1).index.item().strftime('%Y-%m-%d')
   readableDate = datetime.today().strftime('%A %B %-d')
-  dateSuf = getDate(datetime.today().strftime('%d'))
+  dateSuf = getDateSuffix(datetime.today().strftime('%d'))
   
   if (today == last):
       closing = info["Close"][-1]
