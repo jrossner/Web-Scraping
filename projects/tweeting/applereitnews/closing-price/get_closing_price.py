@@ -1,13 +1,28 @@
 import yfinance as yf
 from datetime import datetime
-#from ....applereitnews.dateSuffix import getDateSuffix
+
+def getDateSuffix(x):
+  suffix = ''
+  x = int(x)
+  
+  if x == 1 or x == 21 or x == 31:
+    suffix = 'st'
+  elif x == 3 or x == 23:
+    suffix = 'rd'
+  elif x == 22:
+    suffix = 'nd'
+  else:
+    suffix = 'th'
+   
+  return suffix
+
 
 def getClosingPrice():
   info = yf.Ticker("APLE").history(period="365d")
   today = datetime.today().strftime('%Y-%m-%d')
   last = info.tail(1).index.item().strftime('%Y-%m-%d')
   readableDate = datetime.today().strftime('%A %B %-d')
-  #dateSuf = getDate(datetime.today().strftime('%d'))
+  dateSuf = getDate(datetime.today().strftime('%d'))
   
   if (today == last):
       closing = info["Close"][-1]
@@ -17,8 +32,8 @@ def getClosingPrice():
           opp = ''
       else:
           opp = '+'
-      #text = f'{readableDate}{dateSuf}:\nClosing Price: ${round(closing,2)}'
-      text = f'{readableDate}:\nClosing Price: ${round(closing,2)}'
+      text = f'{readableDate}{dateSuf}:\nClosing Price: ${round(closing,2)}'
+      #text = f'{readableDate}:\nClosing Price: ${round(closing,2)}'
       text += f'\n1-Day Change: {opp}${round(change,2)} ({opp}{round(changePerc,2)}%)'
 
       monthChangeAmount = info["Close"][-1] - info["Close"][-30]
