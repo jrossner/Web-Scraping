@@ -2,6 +2,21 @@ from bs4 import BeautifulSoup
 import requests
 from datetime import datetime, timedelta
 
+def getDateSuffix(x):
+  suffix = ''
+  x = int(x)
+  
+  if x == 1 or x == 21 or x == 31:
+    suffix = 'st'
+  elif x == 3 or x == 23:
+    suffix = 'rd'
+  elif x == 22:
+    suffix = 'nd'
+  else:
+    suffix = 'th'
+   
+  return suffix
+
 def checkUpcomingEarnings():
   link = "https://www.marketbeat.com/stocks/NYSE/APLE/earnings/"
   page_request = requests.get(link)
@@ -9,11 +24,11 @@ def checkUpcomingEarnings():
   head = str(soup.find("dd", class_ = "stat-summary-heading my-1"))
   
   earningsDate = head.split('my-1">')[1].split('<span')[0]
-  #dateSuf = getDateSuffix(earningsDate.strftime('%d'))
+  dateSuf = getDateSuffix(earningsDate.strftime('%d'))
   
   if (datetime.today()+timedelta(days=7)).strftime('%b. %-d') == earningsDate:
     # earnings date is 1 week from today
-    text = f'Apple REIT announces earnings 1 week from today ({earningsDate}).'#{dateSuf}).'
+    text = f'Apple REIT announces earnings 1 week from today ({earningsDate}){dateSuf}).'
     
     try:
       page = soup.find("div", {"id": "cphPrimaryContent_pnlCompany"})
@@ -25,7 +40,7 @@ def checkUpcomingEarnings():
       print("Could not scrape consensus estimates")
       
   elif datetime.today().strftime('%b. %-d') == earningsDate:
-    text = f'Apple REIT announces earnings today ({earningsDate}).'#{dateSuf}).'
+    text = f'Apple REIT announces earnings today ({earningsDate}{dateSuf}).'
     
     try:
       page = soup.find("div", {"id": "cphPrimaryContent_pnlCompany"})
