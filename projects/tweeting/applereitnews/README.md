@@ -4,3 +4,4 @@ automated tweets:
 - closing price each day
 - ex dividend date alert
 - earnings date alert
+- actual earnings figures
