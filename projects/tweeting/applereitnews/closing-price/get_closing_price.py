@@ -9,7 +9,7 @@ def getDateSuffix(x):
     suffix = 'st'
   elif x == 3 or x == 23:
     suffix = 'rd'
-  elif x == 22:
+  elif x == 22 or x == 2:
     suffix = 'nd'
   else:
     suffix = 'th'
