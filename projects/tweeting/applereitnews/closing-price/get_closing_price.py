@@ -21,7 +21,7 @@ def getClosingPrice():
   info = yf.Ticker("APLE").history(period="365d")
   today = datetime.today().strftime('%Y-%m-%d')
   last = info.tail(1).index.item().strftime('%Y-%m-%d')
-  readableDate = datetime.today().strftime('%A %B %-d')
+  readableDate = datetime.today().strftime('%A, %B %-d')
   dateSuf = getDateSuffix(datetime.today().strftime('%d'))
   
   if (today == last):
